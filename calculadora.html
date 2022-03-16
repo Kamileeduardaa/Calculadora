@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=".//stylecal.css">
+        <title>Calculadora </title>
+    </head>
+    <bory>
+        <main class="telafundo">  
+        <div class="fundocalculadora">
+        <h1>CALCULADORA   </h1>
+        <h1 id="resultado"></h1>
+         <table>
+             <tr>
+                 <td><button onclick="clean()">C</button></td>
+                 <td><button onclick="back()"><</button></td>
+                 <td><button onclick="insert('/')">/</button> </td>
+                 <td><button onclick="insert('*')">X</button></td>
+             </tr>
+             <tr>
+                 <td><button onclick="insert('7')">7</button></td>
+                 <td><button onclick="insert('8')">8</button></td>
+                 <td><button onclick="insert('9')">9</button></td> 
+                 <td><button onclick="insert ('-')">-</button></td>
+                </tr>
+
+            <tr> 
+                <td><Button onclick="insert('4')">4</Button></td>
+                <td><Button onclick="insert('5')">5</Button></td>
+                <td><Button onclick="insert('6')">6</Button></td>
+                <td><button onclick="insert ('+')">+</button></td>
+
+            </tr>
+
+            <tr>
+                 <td><Button onclick="insert ('1')">1</Button></td>
+                 <td><Button onclick="insert ('2')">2</Button></td>
+                 <td><Button onclick="insert ('3')">3</Button></td>
+                 <td rowspan="2"><button onclick="calcular()"style="height: 106px;">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="insert('0')" style="width: 106px;">0</button></td>
+                <td><button onclick="insert ('.')">.</button></td>
+
+            </tr>
+
+          </table> 
+      </div>
+    </main> 
+    <script>
+        function insert(num){
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num  ;  
+        }
+        function clean(){
+            document.getElementById('resultado').innerHTML = '';
+        }
+        function back(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+        }
+        function calcular(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            if(resultado){
+                document.getElementById('resultado').innerHTML = eval(resultado);
+            }
+        }
+    </script>
+ </bory>
+</html>
